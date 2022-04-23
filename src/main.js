@@ -8,7 +8,7 @@ import "@fortawesome/fontawesome-free/js/all";
 const store = createStore({
 	state() {
 		return {
-			collapsed: false,
+			collapsed: true,
 			SIDEBAR_WITH: 180,
 			SIDEBAR_WITH_COLLAPSED: 38,
 		};
@@ -21,11 +21,14 @@ const store = createStore({
 				stat.current_width = stat.SIDEBAR_WITH_COLLAPSED;
 			}
 		}, */
+		toggleSidebar(state) {
+			state.collapsed = !state.collapsed;
+		},
 	},
 	getters: {
-		/* 	collapsed(state) {
+		collapsed(state) {
 			return state.collapsed;
-		}, */
+		},
 		Sidebarwiths(stat) {
 			if (stat.collapsed == false) {
 				return `${stat.SIDEBAR_WITH}px`;
@@ -40,7 +43,11 @@ const store = createStore({
 			return stat.SIDEBAR_WITH_COLLAPSED;
 		},
 	},
-	actions: {},
+	actions: {
+		toggleSidebar(context) {
+			context.commit("toggleSidebar");
+		},
+	},
 });
 
 /* const app = createApp(App);
