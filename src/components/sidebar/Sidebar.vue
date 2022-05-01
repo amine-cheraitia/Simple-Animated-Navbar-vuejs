@@ -1,13 +1,12 @@
 <template>
 	<div class="sidebar" :style="{ width: sidebarWith }">
-		<h1>
+		<h2>
 			<span v-if="collapsed">
 				<div>V</div>
-				<div>S</div>
 			</span>
-			<span v-else>Vue Sidebar</span>
-		</h1>
-		<sidebarlink to="home" icon="fas fa-home"> home </sidebarlink>
+			<span v-else>Vue.JS</span>
+		</h2>
+		<sidebarlink to="/" icon="fas fa-home"> home </sidebarlink>
 		<sidebarlink to="about" icon="fas fa-columns"> Dashboard </sidebarlink>
 		<sidebarlink to="charts" icon="fas fa-chart-bar"> Analytics </sidebarlink>
 		<sidebarlink to="friends" icon="fas fa-users"> Friends </sidebarlink>
